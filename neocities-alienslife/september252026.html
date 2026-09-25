@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>September Twentyfifth</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+<style>
+    body {
+        background: #e2ffc2;
+        border: 1px solid #999;
+        padding: 0.1em 1em;
+        font-family: Arial;
+        letter-spacing: 1px;
+        word-spacing: 5px;
+        line-height: 1.8;
+    }
+
+    p {
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 1.5;
+    }
+
+    .question {
+        margin-top: 20px;
+    }
+
+    .buttons {
+        margin-top: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px 20px;
+        margin: 5px;
+        border: 1px solid #777;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: Arial;
+    }
+
+    #yesButton {
+        background: #c8f7a5;
+    }
+
+    #noButton {
+        background: #f7b5b5;
+    }
+
+    #response {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #message {
+        visibility: visible;
+    }
+</style>
+
+</head>
+
+<body>
+
+<center>
+
+<br>
+
+<u><b>September 25, 2026</b></u>
+
+<br>
+
+<button onclick="var au = document.getElementById('tiny-audio'); if(au.paused){au.play(); this.innerText='[⏸] PAUSE BGM';}else{au.pause(); this.innerText='[▶] PLAY BGM';}" style="width:88px; height:31px; background:#000; border:1px solid #00ffff; color:#00ffff; font-family:monospace; font-size:9px; cursor:pointer; font-weight:bold;">[▶] PLAY BGM</button>
+
+<audio id="tiny-audio" src="your-song.mp3" loop></audio>
+
+<img src="https://sweetembed.neocities.org/se_spacer.png" alt="" width="1" height="1" style="position:absolute; visibility:hidden;">
+
+<br><br>
+
+<p id="message"></p>
+
+</center>
+
+<script>
+    const yourText = "I don't know what to do in my life anymore.";
+
+    const message = document.getElementById("message");
+
+    let charactersShown = 0;
+
+    document.addEventListener("keydown", function (event) {
+
+        event.preventDefault();
+
+        if (charactersShown < yourText.length) {
+            charactersShown++;
+
+            message.textContent = yourText.substring(0, charactersShown);
+        }
+    });
+</script>
+
+</body>
+</html>
